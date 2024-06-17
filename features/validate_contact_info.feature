@@ -17,3 +17,9 @@ Scenario: We have received a message that does not have a well formed email
     When the email field does not well formed
     Then The error "The email given must be valid" will be returned
     And the system will continue to the next test
+
+Scenario: We have received a message that does not well formed
+    Given the results of validation
+    When a validation has an error
+    Then return the text of all errors
+    And return the status of 400

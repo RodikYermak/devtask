@@ -52,6 +52,30 @@ Then('the system will continue to the next test', function () {
     assert.ok(true);
 });
 
+Given('the results of validation', function () {
+    // Write code here that turns the phrase above into concrete actions
+    // return 'pending';
+});
+
+When('a validation has an error', function () {
+    this.contactInfo = new ContactInfo('', '', '123-456-7890', 'johndoeexample.com');
+    try {
+        this.contactInfo.validate();
+    } catch (e) {
+        this.errors = e.message.split('; ');
+        this.statusCode = 400;
+    }
+});
+
+Then('return the text of all errors', function () {
+    const expectedErrors = this.errors;
+    assert.deepStrictEqual(this.errors, expectedErrors);
+});
+
+Then('return the status of {int}', function (statusCode) {
+    assert.strictEqual(this.statusCode, statusCode);
+});
+
 // When('a validation has an error', function () {
 //     this.contactInfo = new ContactInfo('54321', '', '', '123-456-7890', 'john.doe@example.com');
 //     try {
