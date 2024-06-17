@@ -4,8 +4,8 @@
   "description": "This is the customer api for initial",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
+    "prestart": "npm install",
+    "start": "node index.js"
   },
   "keywords": [
     "swagger"
@@ -14,7 +14,10 @@
   "private": true,
   "dependencies": {
     "connect": "^3.2.0",
+    "express": "^4.19.2",
     "js-yaml": "^3.3.0",
-    "oas3-tools": "^2.2.3"
+    "oas3-tools": "^2.2.3",
+    "swagger-ui-dist": "^5.17.14",
+    "swagger-ui-express": "^5.0.1"
   }
 }
